@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatividad en acción: laboratorio virtual de espacio y tiempo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Encabezado Principal -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="app-badge">Física 11.º Año</span>
+                <h1>Relatividad en acción</h1>
+                <p class="subtitle">Laboratorio virtual de espacio y tiempo</p>
+            </div>
+
+            <!-- Indicador de Avance del Laboratorio -->
+            <div class="progress-card" aria-label="Progreso del laboratorio">
+                <div class="progress-header">
+                    <span>Avance del laboratorio:</span>
+                    <strong id="progress-text">0 de 8 módulos completados (0%)</strong>
+                </div>
+                <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progress-bar-element">
+                    <div class="progress-bar-fill" id="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de Navegación Principal -->
+    <nav class="main-nav" aria-label="Navegación principal de módulos">
+        <div class="nav-container">
+            <button class="nav-btn active" data-target="home">
+                <span class="nav-icon">🏠</span> Inicio
+            </button>
+            <button class="nav-btn" data-target="mod1">
+                <span class="nav-badge">1</span> Marco Referencial
+            </button>
+            <button class="nav-btn" data-target="mod2">
+                <span class="nav-badge">2</span> Dilatación Tiempo
+            </button>
+            <button class="nav-btn" data-target="mod3">
+                <span class="nav-badge">3</span> Contracción Longitud
+            </button>
+            <button class="nav-btn" data-target="mod4">
+                <span class="nav-badge">4</span> Simultaneidad
+            </button>
+            <button class="nav-btn" data-target="mod5">
+                <span class="nav-badge">5</span> Suma Velocidades
+            </button>
+            <button class="nav-btn" data-target="mod6">
+                <span class="nav-badge">6</span> Equivalencia
+            </button>
+            <button class="nav-btn" data-target="mod7">
+                <span class="nav-badge">7</span> Gravedad y Luz
+            </button>
+            <button class="nav-btn" data-target="mod8">
+                <span class="nav-badge">8</span> Relatividad GPS
+            </button>
+            <button class="nav-btn highlight-btn" data-target="experimental">
+                <span class="nav-icon">🔬</span> Realiza el laboratorio
+            </button>
+            <button class="nav-btn" data-target="fuentes">
+                <span class="nav-icon">📚</span> Fuentes
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <!-- PÁGINA DE INICIO / INTRODUCCIÓN -->
+        <section id="home" class="module-section active">
+            <div class="hero-banner">
+                <h2>Bienvenido al Laboratorio Virtual de Relatividad</h2>
+                <p class="lead-text">
+                    Explora de manera interactiva las predicciones y principios fundamentales de la Relatividad Especial y la Relatividad General de Albert Einstein, diseñados para estudiantes de Física de undécimo año.
+                </p>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>🎯 Propósito y Alcance</h3>
+                    <p>
+                        Este laboratorio virtual permite investigar el comportamiento del espacio, el tiempo, la luz y la gravedad mediante simulaciones interactivas basadas en modelos matemáticos y cualitativos.
+                    </p>
+                    <div class="callout warning-callout">
+                        <strong>⚠️ Nota metodológica importante:</strong>
+                        <p>
+                            Esta aplicación es un <em>modelo educativo simulado</em>. Una simulación por computadora no constituye por sí sola una demostración experimental directa de una teoría científica, sino una herramienta para explorar sus predicciones cuantitativas y cualitativas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📋 Guía para realizar el laboratorio</h3>
+                    <ol class="step-list">
+                        <li><strong>Explora los Módulos 1 al 8:</strong> Revisa la teoría, ajusta las variables de los controles interactivos y observa el comportamiento de las animaciones.</li>
+                        <li><strong>Marca tus avances:</strong> Al finalizar la interacción con cada módulo, usa el botón "Marcar módulo como completado" para registrar tu progreso.</li>
+                        <li><strong>Ejecuta la sección "Realiza el laboratorio":</strong> Plantea tu hipótesis, sigue el procedimiento experimental, registra datos numéricos y responde las preguntas de análisis.</li>
+                        <li><strong>Exporta tu informe:</strong> Descarga la tabla de datos en formato CSV y guarda tus respuestas conceptuales.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card full-width-card">
+                <h3>🌌 Estructura del Aprendizaje</h3>
+                <div class="modules-overview-grid">
+                    <div class="overview-item">
+                        <span class="overview-num">01</span>
+                        <h4>Marcos de Referencia</h4>
+                        <p>Observadores inerciales y los dos postulados de la Relatividad Especial.</p>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-num">02</span>
+                        <h4>Dilatación del Tiempo</h4>
+                            <p>Relojes de luz, tiempo propio (Δτ) y factor de Lorentz (γ).</p>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-num">03</span>
+                        <h4>Contracción de Longitud</h4>
+                        <p>Medición de distancias en la dirección del movimiento relativo.</p>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-num">04</span>
+                        <h4>Simultaneidad</h4>
+                        <p>Eventos separados espacialmente vistos por distintos observadores.</p>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-num">05</span>
+                        <h4>Suma Relativista</h4>
+                        <p>Por qué la velocidad de la luz $c$ es un límite inalcanzable para la materia.</p>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-num">06</span>
+                        <h4>Principio de Equivalencia</h4>
+                        <p>Sistemas acelerados y campos gravitatorios en reposo local.</p>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-num">07</span>
+                        <h4>Gravedad, Luz y Tiempo</h4>
+                        <p>Curvatura del espacio-tiempo, desviación luminosa y cambio de ritmo en relojes.</p>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-num">08</span>
+                        <h4>Relatividad en el GPS</h4>
+                        <p>Aplicación tecnológica real: corrección cinemática y gravitacional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 1: SISTEMAS DE REFERENCIA Y POSTULADOS -->
+        <section id="mod1" class="module-section">
+            <div class="section-header">
+                <h2>Módulo 1: Sistemas de Referencia y Postulados</h2>
+                <button class="btn btn-secondary toggle-complete-btn" data-mod="mod1">
+                    ☐ Marcar como completado
+                </button>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>💡 Fundamentos Teóricos</h3>
+                    <p><strong>Marco de Referencia Inercial:</strong> Sistema de coordenadas en el cual un cuerpo no sometido a fuerzas netas permanece en reposo o en movimiento rectilíneo uniforme (cumple la 1.ª Ley de Newton).</p>
+
+                    <p><strong>Postulados de la Relatividad Especial (1905):</strong></p>
+                    <ul>
+                        <li><strong>1. Principio de Relatividad:</strong> Las leyes de la física adoptan la misma forma matemática en todos los marcos de referencia inerciales. No existe un marco en reposo absoluto.</li>
+                        <li><strong>2. Invariancia de la velocidad de la luz:</strong> La velocidad de la luz en el vacío ($c \approx 3,00 \times 10^8\text{ m/s}$) es idéntica para todos los observadores inerciales, independientemente de la velocidad de la fuente emisora o del observador.</li>
+                    </ul>
+
+                    <div class="callout info-callout">
+                        <strong>Clarificación conceptual:</strong>
+                        <p>La relatividad física no afirma que "todo es relativo o subjetivo". Las leyes físicas y la velocidad de la luz $c$ son invariantes absolutas.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🕹️ Simulación Interactiva: Dos Observadores y un Objeto</h3>
+                    <p class="instruction-text">
+                        Ajusta la velocidad de la plataforma móvil ($v$) respecto al observador fijo en tierra ($A$) y observa cómo percibe cada uno el movimiento del pulso luminoso ($B$).
+                    </p>
+
+                    <div class="controls-panel">
+                        <div class="control-group">
+                            <label for="m1-v-slider">Velocidad del tren/plataforma ($v/c$): <span id="m1-v-val">0.50</span> c</label>
+                            <input type="range" id="m1-v-slider" min="0" max="0.9" step="0.05" value="0.5">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" id="m1-btn-start">▶ Iniciar / Reanudar</button>
+                            <button class="btn btn-secondary" id="m1-btn-pause">⏸ Pausar</button>
+                            <button class="btn btn-tertiary" id="m1-btn-reset">🔄 Reiniciar</button>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="m1-canvas" width="600" height="300" aria-label="Simulación de dos marcos de referencia"></canvas>
+                    </div>
+
+                    <div class="readout-box">
+                        <p><strong>Observador A (En la vía/tierra):</strong> Ve la plataforma moverse a $v = <span id="m1-read-va">0.50</span>c$ y el haz de luz viajar a exactamente $1.00c$.</p>
+                        <p><strong>Observador B (Dentro del tren):</strong> Se siente en reposo relativo a su vagón y mide que la luz viaja a exactamente $1.00c$.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 2: DILATACIÓN DEL TIEMPO -->
+        <section id="mod2" class="module-section">
+            <div class="section-header">
+                <h2>Módulo 2: Dilatación del Tiempo</h2>
+                <button class="btn btn-secondary toggle-complete-btn" data-mod="mod2">
+                    ☐ Marcar como completado
+                </button>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>📐 Ecuaciones y Conceptos</h3>
+                    <p>
+                        El <strong>tiempo propio (Δτ o Δt₀)</strong> es el intervalo de tiempo medido por un observador para quien los dos eventos ocurren en el <em>mismo punto espacial</em>.
+                    </p>
+                    <p>
+                        Un observador en movimiento relativo mide un intervalo dilatado Δt, calculado mediante el factor de Lorentz (γ):
+                    </p>
+                    <div class="formula-box">
+                        β = v / c &nbsp;&nbsp;&nbsp; (0 ≤ β &lt; 1)<br>
+                        γ = 1 / √(1 - β²)<br>
+                        Δt = γ · Δτ
+                    </div>
+                    <p>
+                        Como γ ≥ 1, el observador externo mide una duración mayor (Δt ≥ Δτ). Esto no significa que los procesos biológicos o el tiempo "se sientan" más lentos para quien viaja, sino que los ritmos temporales entre marcos en movimiento relativo divergen objetivamente.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🕰️ Laboratorio del Reloj de Luz</h3>
+                    <div class="controls-panel">
+                        <div class="control-group">
+                            <label for="m2-v-input">Velocidad $v/c$ ($0 \le \beta < 1$):</label>
+                            <div class="input-with-slider">
+                                <input type="number" id="m2-v-input" min="0" max="0.99" step="0.01" value="0.60">
+                                <input type="range" id="m2-v-slider" min="0" max="0.99" step="0.01" value="0.60">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="m2-dtau-input">Tiempo propio ($\Delta\tau$) [segundos o tics]:</label>
+                            <input type="number" id="m2-dtau-input" min="1" max="100" value="10.0" step="0.5">
+                        </div>
+
+                        <div id="m2-error" class="error-msg" hidden></div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-primary" id="m2-btn-calc">⚡ Calcular y Simular</button>
+                            <button class="btn btn-secondary" id="m2-btn-save">💾 Guardar Resultado en Tabla</button>
+                        </div>
+                    </div>
+
+                    <div class="results-display">
+                        <div class="metric-card">
+                            <span class="metric-label">Velocidad ($\beta = v/c$)</span>
+                            <span class="metric-value" id="m2-res-beta">0.600</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Factor Lorentz ($\gamma$)</span>
+                            <span class="metric-value" id="m2-res-gamma">1.250</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Tiempo medido ($\Delta t$)</span>
+                            <span class="metric-value highlight" id="m2-res-dt">12.50 s</span>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="m2-canvas" width="600" height="260" aria-label="Visualización del reloj de luz"></canvas>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <h4>Resultados guardados de Dilatación (Prueba al menos 4 velocidades):</h4>
+                        <table class="data-table" id="m2-saved-table">
+                            <thead>
+                                <tr>
+                                    <th>Prueba #</th>
+                                    <th>Velocidad ($v/c$)</th>
+                                    <th>Tiempo Propio ($\Delta\tau$)</th>
+                                    <th>Factor $\gamma$</th>
+                                    <th>Tiempo Medido ($\Delta t$)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Filas dinámicas -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 3: CONTRACCIÓN DE LA LONGITUD -->
+        <section id="mod3" class="module-section">
+            <div class="section-header">
+                <h2>Módulo 3: Contracción de la Longitud</h2>
+                <button class="btn btn-secondary toggle-complete-btn" data-mod="mod3">
+                    ☐ Marcar como completado
+                </button>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>📏 Ecuaciones y Explicación Física</h3>
+                    <p>
+                        La <strong>longitud propia (L₀)</strong> es la longitud de un objeto medida por un observador que se encuentra en reposo con respecto a dicho objeto.
+                    </p>
+                    <p>
+                        Si el objeto se mueve a una velocidad v respecto a un observador, este medirá una longitud contraída L dada por:
+                    </p>
+                    <div class="formula-box">
+                        L = L₀ / γ = L₀ · √(1 - β²)
+                    </div>
+                    <div class="callout warning-callout">
+                        <strong>Regla de dirección:</strong>
+                        <p>La contracción espacial ocurre <em>únicamente en la dirección del movimiento relativo</em>. Las dimensiones perpendiculares (alto y ancho) permanecen inalteradas.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Visualización de Nave Espacial</h3>
+                    <div class="controls-panel">
+                        <div class="control-group">
+                            <label for="m3-l0-input">Longitud propia ($L_0$) [metros]:</label>
+                            <input type="number" id="m3-l0-input" min="10" max="500" value="100.0" step="5">
+                        </div>
+
+                        <div class="control-group">
+                            <label for="m3-v-input">Velocidad ($v/c$):</label>
+                            <div class="input-with-slider">
+                                <input type="number" id="m3-v-input" min="0" max="0.99" step="0.01" value="0.80">
+                                <input type="range" id="m3-v-slider" min="0" max="0.99" step="0.01" value="0.80">
+                            </div>
+                        </div>
+                        <div id="m3-error" class="error-msg" hidden></div>
+                    </div>
+
+                    <div class="results-display">
+                        <div class="metric-card">
+                            <span class="metric-label">Longitud propia ($L_0$)</span>
+                            <span class="metric-value" id="m3-res-l0">100.0 m</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Factor Lorentz ($\gamma$)</span>
+                            <span class="metric-value" id="m3-res-gamma">1.667</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Longitud contraída ($L$)</span>
+                            <span class="metric-value highlight" id="m3-res-l">60.0 m</span>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="m3-canvas" width="600" height="240" aria-label="Visualización de la contracción de longitud de una nave"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 4: RELATIVIDAD DE LA SIMULTANEIDAD -->
+        <section id="mod4" class="module-section">
+            <div class="section-header">
+                <h2>Módulo 4: Relatividad de la Simultaneidad</h2>
+                <button class="btn btn-secondary toggle-complete-btn" data-mod="mod4">
+                    ☐ Marcar como completado
+                </button>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>⚡ Eventos y Marcos de Referencia</h3>
+                    <p>
+                        Dos eventos que son simultáneos en un marco de referencia inercial no son necesariamente simultáneos en otro marco que se mueva respecto al primero.
+                    </p>
+                    <p>
+                        <strong>Experimento mental del tren:</strong> Un vagón se mueve hacia la derecha con velocidad $v$. Dos destellos de luz se emiten simultáneamente en los extremos posterior (A) y anterior (B) según un observador fijo en la vía ($O_{vía}$).
+                    </p>
+                    <ul>
+                        <li>Para $O_{tren}$ (en el centro del vagón): Se mueve junto al vagón y recibe ambos destellos al mismo tiempo. Para él, los destellos fueron simultáneos.</li>
+                        <li>Para $O_{vía}$ (en la plataforma fija): Observa que el tren avanza al encuentro del pulso B mientras se aleja del pulso A. Por ende, el pulso B llega antes al observador del tren.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🚂 Demostración Interactiva</h3>
+                    <div class="controls-panel">
+                        <div class="control-group">
+                            <label for="m4-v-slider">Velocidad del tren ($v/c$): <span id="m4-v-val">0.50</span> c</label>
+                            <input type="range" id="m4-v-slider" min="0.1" max="0.8" step="0.05" value="0.50">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" id="m4-btn-flash">💥 Emitir Destellos Simultáneos en la Vía</button>
+                            <button class="btn btn-tertiary" id="m4-btn-reset">🔄 Reiniciar</button>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="m4-canvas" width="600" height="280" aria-label="Simulación de simultaneidad"></canvas>
+                    </div>
+
+                    <div class="readout-box" id="m4-readout">
+                        <p>Haz clic en <strong>"Emitir Destellos"</strong> para iniciar la propagación de las ondas de luz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 5: SUMA RELATIVISTA DE VELOCIDADES -->
+        <section id="mod5" class="module-section">
+            <div class="section-header">
+                <h2>Módulo 5: Suma Relativista de Velocidades</h2>
+                <button class="btn btn-secondary toggle-complete-btn" data-mod="mod5">
+                    ☐ Marcar como completado
+                </button>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>➕ Ecuación de Transformación de Velocidades</h3>
+                    <p>
+                        En la física clásica (Galileana), si una nave viaja a velocidad $v$ y dispara un proyectil a velocidad $u'$, la velocidad resultante vista desde la Tierra sería la suma directa $w_{clásica} = u' + v$.
+                    </p>
+                    <p>
+                        Sin embargo, en la Relatividad Especial de Einstein, la velocidad resultante $w$ en la misma dirección se rige por:
+                    </p>
+                    <div class="formula-box">
+                        w = (u' + v) / (1 + u'·v / c²)
+                    </div>
+                    <p>
+                        Propiedad clave: Si u' &lt; c y v &lt; c, entonces w siempre será estrictamente menor que c. Incluso si u' = c (un rayo de luz), la fórmula devuelve w = c.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Calculadora y Comparación Visual</h3>
+                    <div class="controls-panel">
+                        <div class="control-group">
+                            <label for="m5-v-input">Velocidad del vehículo / nave ($v/c$):</label>
+                            <input type="number" id="m5-v-input" min="0" max="0.99" step="0.05" value="0.70">
+                        </div>
+
+                        <div class="control-group">
+                            <label for="m5-u-input">Velocidad del objeto respecto a la nave ($u'/c$):</label>
+                            <input type="number" id="m5-u-input" min="0" max="0.99" step="0.05" value="0.70">
+                        </div>
+
+                        <div id="m5-error" class="error-msg" hidden></div>
+
+                        <button class="btn btn-primary" id="m5-btn-calc">⚡ Calcular Velocidad Resultante</button>
+                    </div>
+
+                    <div class="results-display">
+                        <div class="metric-card">
+                            <span class="metric-label">Suma Clásica ($u' + v$)</span>
+                            <span class="metric-value text-danger" id="m5-res-clasica">1.40 c</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Suma Relativista ($w$)</span>
+                            <span class="metric-value highlight" id="m5-res-relativista">0.9396 c</span>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="m5-canvas" width="600" height="220" aria-label="Comparación gráfica de suma de velocidades"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 6: EQUIVALENCIA Y RELATIVIDAD GENERAL -->
+        <section id="mod6" class="module-section">
+            <div class="section-header">
+                <h2>Módulo 6: Principio de Equivalencia</h2>
+                <button class="btn btn-secondary toggle-complete-btn" data-mod="mod6">
+                    ☐ Marcar como completado
+                </button>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>🛗 La Idea Más Feliz de Einstein</h3>
+                    <p>
+                        El <strong>Principio de Equivalencia</strong> establece que, dentro de un laboratorio cerrado suficientemente pequeño (localmente), los efectos físicos de un campo gravitatorio uniforme son indistinguibles de los de un sistema de referencia con una aceleración uniforme en ausencia de gravedad.
+                    </p>
+                    <ul>
+                        <li><strong>Escenario A:</strong> Ascensor en reposo sobre la Tierra ($g = 9,8\text{ m/s}^2$). Una pelota soltada cae al piso.</li>
+                        <li><strong>Escenario B:</strong> Ascensor en el espacio profundo acelerando hacia arriba a $a = 9,8\text{ m/s}^2$. La pelota soltada también "cae" hacia el piso con la misma aceleración relativa.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📦 Simulación Interactiva del Ascensor</h3>
+                    <div class="controls-panel">
+                        <div class="control-group">
+                            <label for="m6-select-mode">Selecciona el Escenario:</label>
+                            <select id="m6-select-mode" class="custom-select">
+                                <option value="earth">1. Campo Gravitatorio uniforme en la Tierra (g = 9.8 m/s²)</option>
+                                <option value="rocket">2. Cohete en el espacio acelerando a 9.8 m/s²</option>
+                                <option value="freefall">3. Ascensor en Caída Libre (Gravedad cero aparente)</option>
+                            </select>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-primary" id="m6-btn-drop">🎾 Soltar Objeto / Disparar Luz</button>
+                            <button class="btn btn-tertiary" id="m6-btn-reset">🔄 Restablecer</button>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="m6-canvas" width="600" height="300" aria-label="Simulación del ascensor de equivalencia"></canvas>
+                    </div>
+
+                    <div class="readout-box" id="m6-readout">
+                        <p>Observa cómo la trayectoria del objeto y del haz de luz dentro del ascensor responde de manera equivalente en el campo gravitatorio y en el marco acelerado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 7: GRAVEDAD, LUZ Y TIEMPO -->
+        <section id="mod7" class="module-section">
+            <div class="section-header">
+                <h2>Módulo 7: Gravedad, Luz y Tiempo</h2>
+                <button class="btn btn-secondary toggle-complete-btn" data-mod="mod7">
+                    ☐ Marcar como completado
+                </button>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>🌌 Curvatura del Espacio-Tiempo</h3>
+                    <p>
+                        En la Relatividad General, la gravedad no se describe como una fuerza invisible a distancia (Newton), sino como una manifestación de la <strong>curvatura de la geometría del espacio-tiempo</strong> producida por la presencia de masa y energía.
+                    </p>
+
+                    <div class="callout warning-callout">
+                        <strong>Advertencia didáctica:</strong>
+                        <p>
+                            La imagen típica de una "malla elástica hundida por una esfera pesada" es una <em>analogía bidimensional limitada</em>. En el universo real, las cuatro dimensiones (tres espaciales y una temporal) están curvadas.
+                        </p>
+                    </div>
+
+                    <h4>Efectos cualitativos clave:</h4>
+                    <ol>
+                        <li><strong>Desviación de la luz:</strong> Los rayos luminosos siguen la trayectoria geométrica más corta (geodésica) en el espacio-tiempo curvado, curvándose cerca de objetos masivos.</li>
+                        <li><strong>Dilatación gravitacional del tiempo:</strong> Los relojes ubicados más cerca de una gran masa (potencial gravitatorio más profundo) avanzan más lentamente en comparación con relojes situados a mayor altura.</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h3>🪐 Modelos Interactivos</h3>
+                    <div class="tab-buttons">
+                        <button class="subtab-btn active" data-subtab="grid">Analogía de Malla</button>
+                        <button class="subtab-btn" data-subtab="light">Desviación de la Luz</button>
+                        <button class="subtab-btn" data-subtab="time">Dilatación Gravitacional del Tiempo</button>
+                    </div>
+
+                    <div class="controls-panel">
+                        <div class="control-group">
+                            <label for="m7-mass-slider">Masa del objeto central ($M$): <span id="m7-mass-val">5</span> M☉</label>
+                            <input type="range" id="m7-mass-slider" min="1" max="10" step="1" value="5">
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="m7-canvas" width="600" height="280" aria-label="Visualización de relatividad general"></canvas>
+                    </div>
+
+                    <div class="readout-box" id="m7-readout">
+                        <p>Desplaza la masa para observar cómo afecta la deformación de la red y la trayectoria de los rayos luminosos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 8: RELATIVIDAD EN EL SISTEMA GPS -->
+        <section id="mod8" class="module-section">
+            <div class="section-header">
+                <h2>Módulo 8: Relatividad en el Sistema GPS</h2>
+                <button class="btn btn-secondary toggle-complete-btn" data-mod="mod8">
+                    ☐ Marcar como completado
+                </button>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>📡 Una Aplicación Tecnológica Cotidiana</h3>
+                    <p>
+                        El Sistema de Posicionamiento Global (GPS) depende de relojes atómicos ultraprecisos instalados en satélites que orbitan a unos $20\,200\text{ km}$ sobre la Tierra a velocidades de aproximadamente $14\,000\text{ km/h}$.
+                    </p>
+
+                    <h4>Dos efectos relativistas opuestos:</h4>
+                    <ul>
+                        <li>
+                            <strong>Efecto Cinemático (Relatividad Especial):</strong> Debido a su velocidad orbital respecto a la Tierra, los relojes del satélite atrasan aproximadamente <strong>-7 microsegundos ($\mu s$) por día</strong>.
+                        </li>
+                        <li>
+                            <strong>Efecto Gravitacional (Relatividad General):</strong> Al estar a mayor altura ($20\,200\text{ km}$), el campo gravitatorio es más débil que en la superficie terrestre, por lo que sus relojes adelantan aproximadamente <strong>+45 microsegundos ($\mu s$) por día</strong>.
+                        </li>
+                    </ul>
+
+                    <div class="callout info-callout">
+                        <strong>Resultado Neto:</strong>
+                        <p style="font-size:1.1rem; font-weight:bold; margin:0.4rem 0;">+45 μs - 7 μs = +38 μs por día</p>
+                        <p>Sin esta corrección diaria en el software de los receptores GPS, los errores de posición en tierra se acumularían a razón de más de <strong>10 km por día</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🛸 Calculador y Simulación de Desfase Acumulado</h3>
+                    <div class="controls-panel">
+                        <div class="control-group">
+                            <label for="m8-days-input">Días de funcionamiento sin corrección relativista:</label>
+                            <input type="number" id="m8-days-input" min="1" max="365" value="1" step="1">
+                        </div>
+                        <button class="btn btn-primary" id="m8-btn-calc">📊 Calcular Desfase y Error de Posición</button>
+                    </div>
+
+                    <div class="results-display">
+                        <div class="metric-card">
+                            <span class="metric-label">Atraso Especial (Cinemático)</span>
+                            <span class="metric-value text-danger" id="m8-res-sr">-7.0 μs/día</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Adelanto General (Gravitacional)</span>
+                            <span class="metric-value text-success" id="m8-res-gr">+45.0 μs/día</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Desfase Acumulado Neto</span>
+                            <span class="metric-value highlight" id="m8-res-total">+38.0 μs</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Error de Posición Estimado</span>
+                            <span class="metric-value highlight" id="m8-res-dist">~11.4 km</span>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="m8-canvas" width="600" height="220" aria-label="Visualización de satélite GPS y Tierra"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE ACTIVIDAD EXPERIMENTAL: REALIZA EL LABORATORIO -->
+        <section id="experimental" class="module-section">
+            <div class="section-header">
+                <h2>🔬 Seccion de Experimentos: Realiza el Laboratorio Virtual</h2>
+                <span class="badge-lab">Informe Práctico de Física</span>
+            </div>
+
+            <div class="card full-width-card">
+                <h3>1. Planteamiento e Hipótesis Inicial</h3>
+                <div class="form-group">
+                    <label for="exp-q-investigation"><strong>Pregunta de Investigación:</strong></label>
+                    <p class="guide-text">¿Cómo afectan la velocidad relativa y la intensidad del campo gravitatorio a las mediciones de tiempo y distancia según la teoría de la relatividad?</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="exp-student-prediction"><strong>Predicción / Hipótesis del Estudiante:</strong></label>
+                    <textarea id="exp-student-prediction" rows="3" placeholder="Escribe aquí tu predicción inicial sobre qué ocurrirá con la duración del tiempo y la longitud medida a medida que la velocidad se aproxima a c..."></textarea>
+                </div>
+            </div>
+
+            <div class="card full-width-card">
+                <h3>2. Procedimiento de Ejecución Recomendado</h3>
+                <ol class="step-list">
+                    <li><strong>Paso A (Dilatación del Tiempo - Módulo 2):</strong> Selecciona un tiempo propio de Δτ = 10 s. Registra en la tabla los valores de γ y Δt para v/c = 0.0, 0.3, 0.6, 0.8 y 0.95.</li>
+                    <li><strong>Paso B (Contracción de Longitud - Módulo 3):</strong> Selecciona una longitud propia L₀ = 100 m. Registra la longitud contraída L para las mismas velocidades.</li>
+                    <li><strong>Paso C (Suma de Velocidades - Módulo 5):</strong> Introduce v = 0,7c y u' = 0,7c. Mide la velocidad clásica vs la velocidad relativista resultante.</li>
+                </ol>
+            </div>
+
+            <!-- Tabla de Registro de Datos Editable -->
+            <div class="card full-width-card">
+                <div class="table-toolbar">
+                    <h3>3. Tabla de Registro de Datos Experimentales</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" id="exp-btn-add-row">➕ Agregar Fila</button>
+                        <button class="btn btn-tertiary" id="exp-btn-clear-table">🗑️ Borrar Tabla</button>
+                        <button class="btn btn-primary" id="exp-btn-export-csv">📥 Exportar Datos a CSV</button>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="data-table editable-table" id="exp-data-table">
+                        <thead>
+                            <tr>
+                                <th>N.º</th>
+                                <th>Módulo</th>
+                                <th>Velocidad (v/c)</th>
+                                <th>Variable Entrada (L₀ o Δτ)</th>
+                                <th>Factor Lorentz (γ)</th>
+                                <th>Resultado Medido (L o Δt)</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="exp-table-body">
+                            <!-- Filas por defecto -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Observaciones y Análisis -->
+            <div class="card full-width-card">
+                <h3>4. Registro de Observaciones y Análisis de Resultados</h3>
+                <div class="form-group">
+                    <label for="exp-observations"><strong>Observaciones Generales:</strong></label>
+                    <textarea id="exp-observations" rows="4" placeholder="Describe los patrones gráficos y visuales observados en las animaciones de los relojes de luz y la nave espacial..."></textarea>
+                </div>
+
+                <h3>5. Preguntas de Análisis Basadas en Evidencia</h3>
+
+                <div class="question-block">
+                    <label for="q-ans-1"><strong>Pregunta 1 (Interpretación de Datos):</strong> Observando tus datos de la tabla para el Módulo 2, ¿qué ocurre con el factor de Lorentz (γ) a velocidades bajas (v &lt; 0,1c) en comparación con velocidades elevadas (v &gt; 0,8c)? ¿A partir de qué velocidad el efecto es claramente apreciable?</label>
+                    <textarea id="q-ans-1" rows="3" placeholder="Responde aquí integrando tus datos cuantitativos registrados..."></textarea>
+                </div>
+
+                <div class="question-block">
+                    <label for="q-ans-2"><strong>Pregunta 2 (Comparación de Escenarios):</strong> En el Módulo 5, al sumar 0,8c + 0,8c, ¿cuál es el resultado de la suma clásica de Galileo y cuál es el resultado de la fórmula de Einstein? Explica por qué la masa con energía no puede superar la velocidad c.</label>
+                    <textarea id="q-ans-2" rows="3" placeholder="Compara ambos resultados numéricos y justifica físicamente..."></textarea>
+                </div>
+
+                <div class="question-block">
+                    <label for="q-ans-3"><strong>Pregunta 3 (Limitaciones del Modelo):</strong> Explicamos que la "malla de tela elástica" del Módulo 7 es una analogía didáctica. Nombra dos limitaciones físicas de representar el espacio-tiempo como una tela bidimensional sobre la que actúa la gravedad.</label>
+                    <textarea id="q-ans-3" rows="3" placeholder="Menciona las limitaciones del modelo visual..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="exp-conclusions"><strong>6. Conclusión del Estudiante:</strong></label>
+                    <textarea id="exp-conclusions" rows="4" placeholder="Redacta tu conclusión final basada en la hipótesis inicial y los datos recolectados..."></textarea>
+                </div>
+            </div>
+
+            <!-- SOLUCIONARIO DOCENTE DESPLEGABLE -->
+            <div class="card full-width-card teacher-section">
+                <div class="teacher-header">
+                    <h3>👩‍🏫 Solucionario de Referencia y Criterios para el Docente</h3>
+                    <button class="btn btn-secondary" id="btn-toggle-teacher">
+                        👁️ Mostrar / Ocultar Solucionario Docente
+                    </button>
+                </div>
+
+                <div id="teacher-content" class="teacher-content" hidden>
+                    <div class="callout info-callout">
+                        <strong>Nota para el profesor:</strong>
+                        <p>Esta sección contiene las respuestas conceptuales esperadas y los criterios de evaluación sugeridos para revisar el laboratorio de los estudiantes de undécimo año.</p>
+                    </div>
+
+                    <h4>Guía de Respuestas Esperadas:</h4>
+                    <ul>
+                        <li>
+                            <strong>Respuesta 1 (Factor γ):</strong> A velocidades pequeñas (v &lt; 0,1c), β² ≈ 0 por lo que γ ≈ 1,00, haciendo que los efectos relativistas sean prácticamente imperceptibles. A partir de v ≈ 0,5c o 0,6c, γ aumenta significativamente (γ = 1,25 a 0,6c y γ = 1,67 a 0,8c), disparándose asintóticamente hacia el infinito conforme v → c.
+                        </li>
+                        <li>
+                            <strong>Respuesta 2 (Suma de velocidades):</strong> La suma clásica da 1,6c, lo cual viola la invariancia de la velocidad de la luz. La fórmula de Einstein da w = (0,8 + 0,8) / (1 + 0,8 × 0,8) = 1,6 / 1,64 ≈ 0,9756c &lt; c. Esto demuestra matemáticamente que la velocidad c opera como una velocidad límite insuperable en la naturaleza.
+                        </li>
+                        <li>
+                            <strong>Respuesta 3 (Limitaciones de la tela elástica):</strong>
+                            <ol>
+                                <li>La malla elástica representa únicamente 2 dimensiones espaciales, ignorando la tercera dimensión espacial y el eje temporal.</li>
+                                <li>Requiere una "gravedad externa hacia abajo" para hundir la masa en la demostración del aula, mientras que en la Relatividad General la curvatura <em>es</em> la gravedad misma.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE FUENTES Y CRÉDITOS -->
+        <section id="fuentes" class="module-section">
+            <div class="section-header">
+                <h2>📚 Fuentes para Aprender Más y Créditos</h2>
+            </div>
+
+            <div class="card full-width-card">
+                <h3>Referencias Bibliográficas e Institucionales</h3>
+                <p>
+                    Las explicaciones y ecuaciones de esta aplicación educativa fueron elaboradas con base en las siguientes fuentes confiables de física y metrología:
+                </p>
+
+                <ul class="sources-list">
+                    <li>
+                        <strong>OpenStax - Rice University:</strong>
+                        <p>
+                            Ling, S. J., Sanny, J., & Moebs, W. (2016). <em>University Physics Volume 3</em>. OpenStax. Capítulo 5: Relativity ("Time Dilation" y "Length Contraction").
+                            <br>
+                            <span class="source-link">Enlace de consulta libre: <a href="https://openstax.org/details/books/university-physics-volume-3" target="_blank" rel="noopener">https://openstax.org/details/books/university-physics-volume-3</a></span>
+                        </li>
+                    </li>
+                    <li>
+                        <strong>Einstein Online - Max Planck Institute for Gravitational Physics (Albert Einstein Institute):</strong>
+                        <p>
+                            Max-Planck-Gesellschaft. (s.f.). <em>Einstein Online: Elementary concepts of relativity and gravitational physics</em>.
+                            <br>
+                            <span class="source-link">Enlace de consulta libre: <a href="https://www.einstein-online.info/" target="_blank" rel="noopener">https://www.einstein-online.info/</a></span>
+                        </p>
+                    </li>
+                    <li>
+                        <strong>National Institute of Standards and Technology (NIST):</strong>
+                        <p>
+                            NIST Physical Measurement Laboratory. (s.f.). <em>Time and Frequency Division: Relativistic Time Dilation and GPS Satellite Clocks</em>.
+                            <br>
+                            <span class="source-link">Enlace de consulta libre: <a href="https://www.nist.gov/" target="_blank" rel="noopener">https://www.nist.gov/</a></span>
+                        </p>
+                    </li>
+                </ul>
+
+                <div class="callout warning-callout">
+                    <strong>📌 Nota de verificación APA 7:</strong>
+                    <p>
+                        Los nombres institucionales y enlaces anteriores son verídicos y corresponden a portales académicos internacionales de consulta libre. Se recomienda verificar los datos bibliográficos de fecha de consulta antes de incluirlos formalmente en listas de referencias en formato APA 7.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <p><strong>Relatividad en acción: laboratorio virtual de espacio y tiempo</strong></p>
+            <p>Desarrollado como recurso educativo interactivo para estudiantes de Física de 11.º Año | Costa Rica</p>
+            <p><small>Funciona 100% sin conexión a Internet. Sin dependencias externas ni rastreadores.</small></p>
+        </div>
+    </footer>
+
+    <!-- Scripts de la Aplicación (Sin frameworks ni CDNs) -->
+    <script src="js/simulations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
