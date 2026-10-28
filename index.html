@@ -382,11 +382,11 @@
                         Dos eventos que son simultáneos en un marco de referencia inercial no son necesariamente simultáneos en otro marco que se mueva respecto al primero.
                     </p>
                     <p>
-                        <strong>Experimento mental del tren:</strong> Un vagón se mueve hacia la derecha con velocidad $v$. Dos destellos de luz se emiten simultáneamente en los extremos posterior (A) y anterior (B) según un observador fijo en la vía ($O_{vía}$).
+                        <strong>Experimento mental del tren:</strong> Un vagón se mueve hacia la derecha con velocidad v. Si dos destellos ocurren simultáneamente en los extremos del tren según el observador situado en la vía, el observador situado en el centro del tren no los recibe al mismo tiempo porque se mueve hacia uno de los destellos y se aleja del otro.
                     </p>
                     <ul>
-                        <li>Para $O_{tren}$ (en el centro del vagón): Se mueve junto al vagón y recibe ambos destellos al mismo tiempo. Para él, los destellos fueron simultáneos.</li>
-                        <li>Para $O_{vía}$ (en la plataforma fija): Observa que el tren avanza al encuentro del pulso B mientras se aleja del pulso A. Por ende, el pulso B llega antes al observador del tren.</li>
+                        <li><strong>Observador de la vía:</strong> Asigna el mismo instante de emisión a ambos destellos (simultaneidad en su marco de referencia).</li>
+                        <li><strong>Observador del tren:</strong> Recibe primero el destello proveniente de la parte delantera. Al corregir los tiempos de viaje de la luz en su propio marco de referencia, concluye que los destellos no fueron emitidos simultáneamente. La velocidad de la luz se mantiene en c para ambos observadores.</li>
                     </ul>
                 </div>
 
@@ -551,7 +551,7 @@
 
                     <h4>Efectos cualitativos clave:</h4>
                     <ol>
-                        <li><strong>Desviación de la luz:</strong> Los rayos luminosos siguen la trayectoria geométrica más corta (geodésica) en el espacio-tiempo curvado, curvándose cerca de objetos masivos.</li>
+                        <li><strong>Desviación de la luz:</strong> Los rayos luminosos siguen una <strong>geodésica nula del espacio-tiempo curvo</strong>, desviándose en presencia de objetos masivos (no debe confundirse con una simple curva espacial en una superficie plana).</li>
                         <li><strong>Dilatación gravitacional del tiempo:</strong> Los relojes ubicados más cerca de una gran masa (potencial gravitatorio más profundo) avanzan más lentamente en comparación con relojes situados a mayor altura.</li>
                     </ol>
                 </div>
@@ -609,9 +609,11 @@
                     </ul>
 
                     <div class="callout info-callout">
-                        <strong>Resultado Neto:</strong>
+                        <strong>Resultado Neto y Aclaración Técnica:</strong>
                         <p style="font-size:1.1rem; font-weight:bold; margin:0.4rem 0;">+45 μs - 7 μs = +38 μs por día</p>
-                        <p>Sin esta corrección diaria en el software de los receptores GPS, los errores de posición en tierra se acumularían a razón de más de <strong>10 km por día</strong>.</p>
+                        <p>
+                            El valor de <strong>~11,4 km por día</strong> (calculado como c × 38 μs) representa la <em>distancia equivalente al desfase de reloj acumulado</em>. En el sistema GPS real, los relojes de los satélites se ajustan previamente en frecuencia y los receptores aplican correcciones continuas, evitando que este error temporal se traduzca directamente en una desviación de posición de kilómetros.
+                        </p>
                     </div>
                 </div>
 
@@ -639,7 +641,7 @@
                             <span class="metric-value highlight" id="m8-res-total">+38.0 μs</span>
                         </div>
                         <div class="metric-card">
-                            <span class="metric-label">Error de Posición Estimado</span>
+                            <span class="metric-label">Distancia equiv. al desfase (c × Δt)</span>
                             <span class="metric-value highlight" id="m8-res-dist">~11.4 km</span>
                         </div>
                     </div>
@@ -659,7 +661,12 @@
             </div>
 
             <div class="card full-width-card">
-                <h3>1. Planteamiento e Hipótesis Inicial</h3>
+                <h3>1. Planteamiento, Materiales e Hipótesis Inicial</h3>
+                <div class="form-group">
+                    <label><strong>Materiales y Equipos Requeridos:</strong></label>
+                    <p class="guide-text">Computadora, tableta o dispositivo móvil con navegador web (Chrome, Firefox, Edge o Safari) y la aplicación del simulador "Relatividad en Acción" cargada.</p>
+                </div>
+
                 <div class="form-group">
                     <label for="exp-q-investigation"><strong>Pregunta de Investigación:</strong></label>
                     <p class="guide-text">¿Cómo afectan la velocidad relativa y la intensidad del campo gravitatorio a las mediciones de tiempo y distancia según la teoría de la relatividad?</p>
@@ -676,7 +683,7 @@
                 <ol class="step-list">
                     <li><strong>Paso A (Dilatación del Tiempo - Módulo 2):</strong> Selecciona un tiempo propio de Δτ = 10 s. Registra en la tabla los valores de γ y Δt para v/c = 0.0, 0.3, 0.6, 0.8 y 0.95.</li>
                     <li><strong>Paso B (Contracción de Longitud - Módulo 3):</strong> Selecciona una longitud propia L₀ = 100 m. Registra la longitud contraída L para las mismas velocidades.</li>
-                    <li><strong>Paso C (Suma de Velocidades - Módulo 5):</strong> Introduce v = 0,7c y u' = 0,7c. Mide la velocidad clásica vs la velocidad relativista resultante.</li>
+                    <li><strong>Paso C (Suma de Velocidades - Módulo 5):</strong> Introduce v = 0,8c y u' = 0,8c. Mide la velocidad clásica vs la velocidad relativista resultante.</li>
                 </ol>
             </div>
 
@@ -727,7 +734,7 @@
                 </div>
 
                 <div class="question-block">
-                    <label for="q-ans-2"><strong>Pregunta 2 (Comparación de Escenarios):</strong> En el Módulo 5, al sumar 0,8c + 0,8c, ¿cuál es el resultado de la suma clásica de Galileo y cuál es el resultado de la fórmula de Einstein? Explica por qué la masa con energía no puede superar la velocidad c.</label>
+                    <label for="q-ans-2"><strong>Pregunta 2 (Comparación de Escenarios):</strong> En el Módulo 5, al sumar 0,8c + 0,8c, ¿cuál es el resultado de la suma clásica de Galileo y cuál es el resultado de la fórmula de Einstein? Explica por qué la suma relativista no supera c y qué indica eso sobre la velocidad límite en el universo.</label>
                     <textarea id="q-ans-2" rows="3" placeholder="Compara ambos resultados numéricos y justifica físicamente..."></textarea>
                 </div>
 
@@ -796,22 +803,22 @@
                             Ling, S. J., Sanny, J., & Moebs, W. (2016). <em>University Physics Volume 3</em>. OpenStax. Capítulo 5: Relativity ("Time Dilation" y "Length Contraction").
                             <br>
                             <span class="source-link">Enlace de consulta libre: <a href="https://openstax.org/details/books/university-physics-volume-3" target="_blank" rel="noopener">https://openstax.org/details/books/university-physics-volume-3</a></span>
-                        </li>
+                        </p>
                     </li>
                     <li>
                         <strong>Einstein Online - Max Planck Institute for Gravitational Physics (Albert Einstein Institute):</strong>
                         <p>
-                            Max-Planck-Gesellschaft. (s.f.). <em>Einstein Online: Elementary concepts of relativity and gravitational physics</em>.
+                            Max Planck Institute for Gravitational Physics. (2020). <em>Spotlights on relativity: Special relativity, time dilation, and the equivalence principle</em>. Einstein Online.
                             <br>
-                            <span class="source-link">Enlace de consulta libre: <a href="https://www.einstein-online.info/" target="_blank" rel="noopener">https://www.einstein-online.info/</a></span>
+                            <span class="source-link">Enlace de consulta libre: <a href="https://www.einstein-online.info/en/category/elementary/" target="_blank" rel="noopener">https://www.einstein-online.info/en/category/elementary/</a></span>
                         </p>
                     </li>
                     <li>
                         <strong>National Institute of Standards and Technology (NIST):</strong>
                         <p>
-                            NIST Physical Measurement Laboratory. (s.f.). <em>Time and Frequency Division: Relativistic Time Dilation and GPS Satellite Clocks</em>.
+                            NIST Physical Measurement Laboratory. (2019). <em>Time and Frequency Division: Primary Frequency Standards and GPS Timekeeping</em>. National Institute of Standards and Technology.
                             <br>
-                            <span class="source-link">Enlace de consulta libre: <a href="https://www.nist.gov/" target="_blank" rel="noopener">https://www.nist.gov/</a></span>
+                            <span class="source-link">Enlace de consulta libre: <a href="https://www.nist.gov/pml/time-and-frequency-division" target="_blank" rel="noopener">https://www.nist.gov/pml/time-and-frequency-division</a></span>
                         </p>
                     </li>
                 </ul>

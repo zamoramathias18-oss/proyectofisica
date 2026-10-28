@@ -466,7 +466,7 @@
         btnFlash.addEventListener("click", () => {
             isFlashing = true;
             waveRadius = 0;
-            readout.innerHTML = `<p><strong>Ondas de luz emitidas:</strong> Para la vía, los destellos salieron al mismo tiempo de ambos puntos de la vía. Para el observador del tren, este avanza hacia la luz frontal y se aleja de la trasera.</p>`;
+            readout.innerHTML = `<p><strong>Ondas de luz emitidas:</strong> Para la vía, los destellos son simultáneos. Sin embargo, el observador en el centro del tren avanza hacia la luz del extremo delantero (B) y se aleja de la luz del extremo trasero (A), por lo que percibe la luz frontal primero y deduce no-simultaneidad en su propio marco.</p>`;
         });
 
         btnReset.addEventListener("click", () => {
